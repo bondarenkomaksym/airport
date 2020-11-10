@@ -9,24 +9,30 @@ import * as flightsActions from "../flights.actions";
 
 function Home({ flightsList, getFlightsList }) {
 
+  if (!flightsList) {
+    return null
+  }
+
   useEffect(() => {
     getFlightsList();
   }, []);
 
-  // let { body } = flightsList.body;
-  //.departure[0].codeShareData[0].codeShare
+  // .body.departure[0].codeShareData[0].codeShare
+
+  let nameFlight = flightsList.body.departure[0].codeShareData[0].codeShare;
 
   return (
     <div className="page__content">
       <h1>🏠</h1>
-      {/* <ul className="cities-list">
-        {flightsList.map(data => (
-          <li key={data.id} className="city">
-            <span className="city__name">{data.name}</span>
+
+      {/* <ul className="flights-list">
+        {flightsList.map(flight => (
+          <li className="flight">
+            <span className="flight__name">{flight}</span>
           </li>
         ))}
       </ul> */}
-      {console.log(flightsList.body)}
+
       <Link to="/departures">SEARCH</Link>
     </div>
   )
