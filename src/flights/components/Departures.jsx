@@ -1,18 +1,50 @@
 import { Link } from "react-router-dom";
-import React from 'react';
+import React, { useEffect } from 'react';
+import moment from "moment";
 
-const Departures = () => {
+import { connect } from 'react-redux';
+import { flightsListSelectorDep, filteredFlightDep } from '../flights.selectors';
+import * as flightsActions from "../flights.actions";
+
+const Departures = ({ flightsListDep, getFlightsList }) => {
+
+  useEffect(() => {
+    getFlightsList();
+  }, []);
 
 
   return (
-    <div className="page__content">
+    <div className="flights__content">
       <h1>Departures</h1>
-      <p>We are here</p>
+
+      <ul className="flights-list">
+        {flightsListDep.map(flight => (
+
+          <li key={flight.ID} className="flight-list__commoninfo">
+            <span className="info">{flight.term}</span>
+            <span className="info">{`${moment(`${flight.timeDepShedule}`).format('HH:mm')}`}</span>
+            <span className="info">{`Departed at ${moment(`${flight.actual}`).format('HH:mm')}`}</span>
+            <img className='logo_avia' src={`${flight.airline.en.logoSmallName}`} alt="" />
+            <span className="info">{flight['airportToID.city']}</span>
+            <span className="info">{flight.codeShareData[0].codeShare}</span>
+          </li>
+        ))}
+      </ul>
       <Link to="/arrivals">Go to Arrivals</Link>
     </div>
   )
 }
 
-export default Departures;
+const mapState = state => {
+  return {
+    // flightsListDep: flightsListSelectorDep(state),
+    flightsListDep: filteredFlightDep(state),
+  }
+}
 
-// export default connect(mapState, mapDispatch)(Departures);
+const mapDispatch = {
+  getFlightsList: flightsActions.getFlightsList,
+}
+
+
+export default connect(mapState, mapDispatch)(Departures);

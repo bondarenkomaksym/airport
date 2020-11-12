@@ -1,46 +1,50 @@
-// import React from "react";
 import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 import { connect } from 'react-redux';
-import { flightsListSelector } from '../flights.selectors';
+import { flightsListSelectorDep } from '../flights.selectors';
 import * as flightsActions from "../flights.actions";
 
 
-function Home({ flightsList, getFlightsList }) {
+function Home({ flightsListDep, getFlightsList }) {
 
-  if (!flightsList) {
-    return null
-  }
+  // if (!flightsList) {
+  //   return null
+  // }
 
   useEffect(() => {
     getFlightsList();
   }, []);
 
-  // .body.departure[0].codeShareData[0].codeShare
-
-  let nameFlight = flightsList.body.departure[0].codeShareData[0].codeShare;
 
   return (
-    <div className="page__content">
-      <h1>🏠</h1>
+    <div className="flights__content">
+      <h1>Start page</h1>
 
-      {/* <ul className="flights-list">
-        {flightsList.map(flight => (
-          <li className="flight">
-            <span className="flight__name">{flight}</span>
+      <ul className="flights-list">
+        {flightsListDep.map(flight => (
+
+          <li key={flight.ID} className="flight-list__commoninfo">
+            <span className="info">{flight.term}</span>
+            <span className="info">{`${moment(`${flight.timeDepShedule}`).format('HH:mm')}`}</span>
+            <span className="info">{`Departed at ${moment(`${flight.actual}`).format('HH:mm')}`}</span>
+            <img className='logo_avia' src={`${flight.airline.en.logoSmallName}`} alt="" />
+            <span className="info">{flight['airportToID.city']}</span>
+            <span className="info">{flight.codeShareData[0].codeShare}</span>
+
           </li>
         ))}
-      </ul> */}
+      </ul>
 
-      <Link to="/departures">SEARCH</Link>
+      <Link to="/departures">Departures</Link>
     </div>
   )
 };
 
 const mapState = state => {
   return {
-    flightsList: flightsListSelector(state),
+    flightsListDep: flightsListSelectorDep(state),
   }
 }
 

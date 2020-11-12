@@ -1,7 +1,12 @@
-import { FLIGHTS_LIST_RECIEVED } from './flights.actions';
+import {
+  FLIGHTS_LIST_RECIEVED,
+  FILTER_FLIGHTS
+} from './flights.actions';
 
 const initialState = {
-  flightsList: [],
+  flightsListDep: [],
+  flightsListAr: [],
+  filteredTextFlight: '',
 };
 
 const flightReducer = (state = initialState, action) => {
@@ -9,7 +14,13 @@ const flightReducer = (state = initialState, action) => {
     case FLIGHTS_LIST_RECIEVED:
       return {
         ...state,
-        flightsList: action.payload.flightsList,
+        flightsListDep: action.payload.flightsList.body.departure,
+        flightsListAr: action.payload.flightsList.body.arrival,
+      }
+    case FILTER_FLIGHTS:
+      return {
+        ...state,
+        filteredTextFlight: action.payload.textFromInput
       }
     default:
       return state;

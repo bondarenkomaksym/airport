@@ -1,6 +1,7 @@
 import { fetchFlightsList } from './flightsGateway';
 
 export const FLIGHTS_LIST_RECIEVED = 'FLIGHTS_LIST_RECIEVED';
+export const FILTER_FLIGHTS = "FILTER_FLIGHTS";
 
 export const flightsListRecieved = (flightsList) => {
   return {
@@ -17,5 +18,14 @@ export const getFlightsList = () => {
       .then(data => {
         dispatch(flightsListRecieved(data));
       })
+  }
+}
+
+export const filterFlight = textFromInput => {
+  return {
+    type: FILTER_FLIGHTS,
+    payload: {
+      textFromInput
+    }
   }
 }
