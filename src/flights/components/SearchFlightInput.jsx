@@ -3,9 +3,17 @@ import { connect } from 'react-redux';
 import { filterFlight } from "../flights.actions";
 import { filterTextSelector } from "../flights.selectors";
 
-// import qs from 'qs';
+import qs from 'qs';
+import { Link, useLocation } from 'react-router-dom';
 
 const SearchFlightInput = ({ filteredTextFlight, filterFlight }) => {
+
+  // const { location } = useLocation();
+  // // let { pathway } = useParams();
+
+  // useEffect(() => {
+  //   console.log("route changed");
+  // }, [location])
 
   return (
     <div className="filter">
@@ -15,14 +23,13 @@ const SearchFlightInput = ({ filteredTextFlight, filterFlight }) => {
           className="filter-flight__input"
           name='filter-flight__input'
           value={filteredTextFlight}
-          onChange={e => {
-            filterFlight(e.target.value)
-          }}
+          onChange={e => { filterFlight(e.target.value) }}
         />
-        <button
-          className="filter-flight__btn"
-        // onClick={() => filterFlight(e.target.value)}
-        >Search</button>
+        {/* <Link to={`${pathway}?selected=${filteredTextFlight}`}>
+          <button
+            className="filter-flight__btn"
+          >Search</button>
+        </Link> */}
       </form>
     </div>
   )
