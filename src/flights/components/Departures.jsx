@@ -32,7 +32,6 @@ const Departures = ({ flightsListDep, getFlightsList }) => {
           </li>
         ))}
       </ul>
-      <Link to="/arrivals">Go to Arrivals</Link>
     </div>
   )
 }

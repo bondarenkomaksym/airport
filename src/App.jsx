@@ -9,6 +9,7 @@ import Home from './flights/components/Home';
 import Departures from './flights/components/Departures';
 import Arrivals from './flights/components/Arrivals';
 import SearchFlightInput from './flights/components/SearchFlightInput';
+import Navigation from './flights/components/Navigation';
 
 
 
@@ -20,10 +21,10 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <SearchFlightInput />
+          <Navigation />
           <Switch>
             <Route exact path='/'><Home /></Route>
             <Route path='/departures'><Departures /></Route>
-            <Route path='/departures/:slug'><Departures /></Route>
             <Route path='/arrivals'><Arrivals /></Route>
             <Route path='/*' component={() => <h1>Error 404</h1>} />
           </Switch>

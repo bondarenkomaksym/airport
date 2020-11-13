@@ -30,7 +30,6 @@ const Arrivals = ({ flightsListAr, getFlightsList }) => {
           </li>
         ))}
       </ul>
-      <Link to="/departures">Go to Departures</Link>
     </div>
   )
 }

@@ -36,8 +36,6 @@ function Home({ flightsListDep, getFlightsList }) {
           </li>
         ))}
       </ul>
-
-      <Link to="/departures">Departures</Link>
     </div>
   )
 };
