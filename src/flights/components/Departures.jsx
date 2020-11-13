@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import React, { useEffect } from 'react';
 import moment from "moment";
 
 import { connect } from 'react-redux';
-import { flightsListSelectorDep, filteredFlightDep } from '../flights.selectors';
+import { filteredFlightDep } from '../flights.selectors';
 import * as flightsActions from "../flights.actions";
 
 const Departures = ({ flightsListDep, getFlightsList }) => {
@@ -12,6 +12,8 @@ const Departures = ({ flightsListDep, getFlightsList }) => {
     getFlightsList();
   }, []);
 
+  // let { slug } = useParams();
+  // console.log(slug);
 
   return (
     <div className="flights__content">

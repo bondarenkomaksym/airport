@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Link, useLocation } from 'react-router-dom';
 
-
 import { Provider } from "react-redux";
 import store from "./store";
 
@@ -15,23 +14,16 @@ import SearchFlightInput from './flights/components/SearchFlightInput';
 
 function App() {
 
-  // const location = useLocation();
-  // // let { direction } = useParams();
-
-  // useEffect(() => {
-  //   console.log("route changed");
-  // }, [location, pathname])
-
-
   return (
     <div className="flights__content">
       <h1>Flights</h1>
       <Provider store={store}>
-        <SearchFlightInput />
         <BrowserRouter>
+          <SearchFlightInput />
           <Switch>
             <Route exact path='/'><Home /></Route>
             <Route path='/departures'><Departures /></Route>
+            <Route path='/departures/:slug'><Departures /></Route>
             <Route path='/arrivals'><Arrivals /></Route>
             <Route path='/*' component={() => <h1>Error 404</h1>} />
           </Switch>
