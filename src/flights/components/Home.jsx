@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from "react-router-dom";
 import moment from "moment";
 
 import { connect } from 'react-redux';
@@ -9,20 +8,16 @@ import * as flightsActions from "../flights.actions";
 
 function Home({ flightsListDep, getFlightsList }) {
 
-  // if (!flightsList) {
-  //   return null
-  // }
-
-  useEffect(() => {
-    getFlightsList();
-  }, []);
+  // useEffect(() => {
+  //   getFlightsList();
+  // }, []);
 
 
   return (
     <div className="flights__content">
       <h1>Start page</h1>
 
-      <ul className="flights-list">
+      {/* <ul className="flights-list">
         {flightsListDep.map(flight => (
 
           <li key={flight.ID} className="flight-list__commoninfo">
@@ -35,22 +30,22 @@ function Home({ flightsListDep, getFlightsList }) {
 
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   )
 };
 
-const mapState = state => {
-  return {
-    flightsListDep: flightsListSelectorDep(state),
-  }
-}
+// const mapState = state => {
+//   return {
+//     flightsListDep: flightsListSelectorDep(state),
+//   }
+// }
 
-const mapDispatch = {
-  getFlightsList: flightsActions.getFlightsList,
-}
+// const mapDispatch = {
+//   getFlightsList: flightsActions.getFlightsList,
+// }
 
 
-// export default Home;
+export default Home;
 
-export default connect(mapState, mapDispatch)(Home);
+// export default connect(mapState, mapDispatch)(Home);

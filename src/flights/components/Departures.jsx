@@ -11,8 +11,6 @@ const Departures = ({ flightsListDep, getFlightsList }) => {
     getFlightsList();
   }, []);
 
-  // let { slug } = useParams();
-  // console.log(slug);
 
   return (
     <div className="flights__content">
@@ -39,7 +37,6 @@ const Departures = ({ flightsListDep, getFlightsList }) => {
 
 const mapState = state => {
   return {
-    // flightsListDep: flightsListSelectorDep(state),
     flightsListDep: filteredFlightDep(state),
   }
 }

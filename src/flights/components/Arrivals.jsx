@@ -38,7 +38,6 @@ const Arrivals = ({ flightsListAr, getFlightsList }) => {
 
 const mapState = state => {
   return {
-    // flightsListAr: flightsListSelectorAr(state),
     flightsListAr: filteredFlightArr(state),
   }
 }

@@ -8,11 +8,13 @@ import { Link, useLocation } from 'react-router-dom';
 
 const SearchFlightInput = ({ filteredTextFlight, filterFlight }) => {
 
-  let { search, pathname } = useLocation();
+  const { search, pathname } = useLocation();
 
   const direction = pathname === '/' ? '/departures' : pathname;
 
   const soughtFlight = qs.parse(search, { ignoreQueryPrefix: true }).found;
+
+
 
   useEffect(() => {
     if (soughtFlight) {
@@ -20,20 +22,21 @@ const SearchFlightInput = ({ filteredTextFlight, filterFlight }) => {
     }
   }, [search])
 
-
   return (
     <div className="filter">
+      <form >
+        <input
+          type="text"
+          defaultValue={filteredTextFlight}
+          id="input"
+        />
 
-      <input
-        type="text"
-        value={filteredTextFlight}
-        onChange={e => { filterFlight(e.target.value) }}
-      />
-
-      <Link to={`${direction}?found=${filteredTextFlight}`}>
-        <button >Search</button>
-      </Link>
-
+        <Link to={`${direction}?found=${filteredTextFlight}`}>
+          <button
+            onClick={e => { filterFlight(document.getElementById('input').value) }}
+          >Search</button>
+        </Link>
+      </form>
     </div>
   )
 }
