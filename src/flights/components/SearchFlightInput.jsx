@@ -22,13 +22,9 @@ const SearchFlightInput = ({ filterFlight }) => {
   }, [search])
 
 
-  const handleSubmit = e => {
-    e.preventDefault();
-  }
-
   return (
     <div className="filter">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={e => e.preventDefault()}>
         <input
           type="text"
           value={filteredTextFlight}
