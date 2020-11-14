@@ -27,6 +27,7 @@ const SearchFlightInput = ({ filterFlight }) => {
       <form onSubmit={e => e.preventDefault()}>
         <input
           type="text"
+          placeholder="Flight #"
           value={filteredTextFlight}
           onChange={e => setName(e.target.value)}
         />
