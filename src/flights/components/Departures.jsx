@@ -23,7 +23,7 @@ const Departures = ({ flightsListDep, getFlightsList }) => {
             <li key={flight.ID} className="flight-list__commoninfo">
               <span className="info">{flight.term}</span>
               <span className="info">{`${moment(`${flight.timeDepShedule}`).format('HH:mm')}`}</span>
-              <span className="info">{`Departed at ${moment(`${flight.actual}`).format('HH:mm')}`}</span>
+              <span className="info">{`Departed at ${moment(`${flight.timeTakeofFact}`).format('HH:mm')}`}</span>
               <img className='logo_avia' src={`${flight.airline.en.logoSmallName}`} alt="" />
               <span className="info">{flight['airportToID.city']}</span>
               <span className="info">{flight.codeShareData[0].codeShare}</span>

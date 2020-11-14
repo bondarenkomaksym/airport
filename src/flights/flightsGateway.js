@@ -1,4 +1,4 @@
-const baseUrl = "https://api.iev.aero/api/flights/13-11-2020";
+const baseUrl = "https://api.iev.aero/api/flights/12-11-2020";
 
 
 export const fetchFlightsList = () =>

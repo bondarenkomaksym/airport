@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { filterFlight } from "../flights.actions";
 import { filterTextSelector } from "../flights.selectors";
@@ -6,14 +6,13 @@ import { filterTextSelector } from "../flights.selectors";
 import qs from 'qs';
 import { Link, useLocation } from 'react-router-dom';
 
-const SearchFlightInput = ({ filteredTextFlight, filterFlight }) => {
+const SearchFlightInput = ({ filterFlight }) => {
 
+  const [filteredTextFlight, setName] = useState('');
   const { search, pathname } = useLocation();
 
   const direction = pathname === '/' ? '/departures' : pathname;
-
   const soughtFlight = qs.parse(search, { ignoreQueryPrefix: true }).found;
-
 
 
   useEffect(() => {
@@ -22,18 +21,22 @@ const SearchFlightInput = ({ filteredTextFlight, filterFlight }) => {
     }
   }, [search])
 
+
+  const handleSubmit = e => {
+    e.preventDefault();
+  }
+
   return (
     <div className="filter">
-      <form >
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
-          defaultValue={filteredTextFlight}
-          id="input"
+          value={filteredTextFlight}
+          onChange={e => setName(e.target.value)}
         />
-
         <Link to={`${direction}?found=${filteredTextFlight}`}>
           <button
-            onClick={e => { filterFlight(document.getElementById('input').value) }}
+            type="submit"
           >Search</button>
         </Link>
       </form>

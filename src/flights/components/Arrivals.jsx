@@ -23,7 +23,7 @@ const Arrivals = ({ flightsListAr, getFlightsList }) => {
             <li key={flight.ID} className="flight-list__commoninfo">
               <span className="info">{flight.term}</span>
               <span className="info">{`${moment(`${flight.timeArrShedule}`).format('HH:mm')}`}</span>
-              <span className="info">{`Arrived at ${moment(`${flight.actual}`).format('HH:mm')}`}</span>
+              <span className="info">{`Arrived at ${moment(`${flight.timeLandFact}`).format('HH:mm')}`}</span>
               <img className='logo_avia' src={`${flight.airline.en.logoSmallName}`} alt="" />
               <span className="info">{flight['airportFromID.city']}</span>
               <span className="info">{flight.codeShareData[0].codeShare}</span>
