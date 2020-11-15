@@ -5,15 +5,15 @@ import { NavLink } from "react-router-dom";
 function Navigation() {
 
   return (
-    <ul className="flights-list" style={{ display: 'flex' }}>
+    <div className="navigation" style={{ display: 'flex' }}>
       <NavLink to="/departures">
-        <li style={{ marginRight: 20, listStyle: 'none' }}>Departures</li>
+        <div style={{ marginRight: 20, listStyle: 'none' }}>Departures</div>
       </NavLink>
 
       <NavLink to="/arrivals">
-        <li style={{ marginRight: 20, listStyle: 'none' }}>Arrivals</li>
+        <div style={{ marginRight: 20, listStyle: 'none' }}>Arrivals</div>
       </NavLink>
-    </ul>
+    </div>
   )
 };
 
