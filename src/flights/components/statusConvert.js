@@ -3,7 +3,7 @@ export const statusConvert = (status, time) => {
     case 'LN':
       return `Landed ${time}`
     case 'DP':
-      return `Departed at: ${time}`
+      return `Departed at ${time}`
     case 'FR':
       return 'In flight'
     case 'CC':

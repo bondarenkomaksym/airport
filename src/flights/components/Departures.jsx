@@ -17,7 +17,6 @@ const Departures = ({ flightsListDep, getFlightsList }) => {
 
   return (
     <div className="flights">
-      {/* <h1>Departures</h1> */}
       {flightsListDep.length === 0
         ? <span>No flights</span>
         : <div className="flights__list">
