@@ -1,17 +1,18 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 
+import '../styles/nav.scss';
 
 function Navigation() {
 
   return (
-    <div className="navigation" style={{ display: 'flex' }}>
-      <NavLink to="/departures">
-        <div style={{ marginRight: 20, listStyle: 'none' }}>Departures</div>
+    <div className="navigation" >
+      <NavLink className="navigation__dep" to="/departures">
+        <div>Departures</div>
       </NavLink>
 
-      <NavLink to="/arrivals">
-        <div style={{ marginRight: 20, listStyle: 'none' }}>Arrivals</div>
+      <NavLink className="navigation__ar" to="/arrivals">
+        <div>Arrivals</div>
       </NavLink>
     </div>
   )

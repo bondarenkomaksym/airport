@@ -1,0 +1,14 @@
+.navigation{
+  display: flex;
+  background-color: #fff;
+  width: 80%;
+  justify-content: space-around;
+  
+  &__dep{
+    text-decoration: none;
+  }
+  
+  &__ar{
+    text-decoration: none;
+  }
+}
