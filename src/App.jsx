@@ -15,8 +15,8 @@ import Navigation from './flights/components/Navigation';
 function App() {
 
   return (
-    <div className="flights__app">
-      <div className="flights__header_title">SEARCH FLIGHT</div>
+    <div className="app">
+      <div className="app__header_title">SEARCH FLIGHT</div>
       <Provider store={store}>
         <BrowserRouter>
           <SearchFlightInput />

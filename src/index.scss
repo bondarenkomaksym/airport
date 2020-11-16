@@ -7,26 +7,30 @@ body {
   // background-color: #e7efec;
 }
 
-.flights {
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7efec;
+}
 
-  &__app{
-    background-color: #e7efec;
-    display: flex;
+  .flights{
     width: 100%;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     
-  }
-
   &__header_title{
     color: rgb(53, 39, 245);
     font-size: 20px;
   }
 
   &__list{
-    display: flex;
+    width: 80%;
+    margin: 0 auto;
     flex-direction: column;
-    
   }
 
   &__headers{
@@ -58,62 +62,6 @@ body {
   img {
     width: 100%;
   }
-
-}
-
-// .navigation a{
-//   display: flex;
-//   margin-top: 30px;
-
-// }
-
-// .flights-list{
-//   display: flex;
-//   flex-direction: column;
-//   width: 1000px;
-// }
-
-// .flight-list__commoninfo {
-//       display: inline-flex;
-// }
-
-// .headers {
-//   display: flex;
-//   width: 100%;
-//   margin-bottom: 20px;
-//   font-weight: 700;
-// }
-
-// .headers_info {
-//   width: 160px;
-// }
+  }
 
 
-// .flights {
-//   width: 100vw;
-//   height: 100vh;
-//   display: flex;
-
-//   &__content {
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//       margin: auto;
-//   }
-// }
-
-// .info {
-//   width: 100%;
-// margin-top: 30px;
-// }
-
-// .navigation {
-//   list-style-type: none;
-//   display: flex;
-//   margin: 0;
-//   padding: 0;
-
-//   &__item {
-//       margin: 8px;
-//   }
-// }
