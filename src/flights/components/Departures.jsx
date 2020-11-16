@@ -22,26 +22,31 @@ const Departures = ({ flightsListDep, getFlightsList }) => {
         ? <span>No flights</span>
         : <div className="flights__list">
           <div className="flights__headers">
-            <div className="headers_info">Terminal</div>
-            <div className="headers_info">Local time</div>
-            <div className="headers_info">Destination</div>
-            <div className="headers_info">Status</div>
-            <div className="headers_info">Airline</div>
-            <div className="headers_info">Flight</div>
+            <div className="flights__headers-info">Terminal</div>
+            <div className="flights__headers-info">Local time</div>
+            <div className="flights__headers-info">Destination</div>
+            <div className="flights__headers-info">Status</div>
+            <div className="flights__headers-info">Airline</div>
+            <div className="flights__headers-info">Flight</div>
           </div>
 
           {flightsListDep.map(flight => (
 
             <div key={flight.ID} className="flights__list-commoninfo">
-              <div className="info">{flight.term}</div>
-              <div className="info">{`${moment(`${flight.timeDepShedule}`).format('HH:mm')}`}</div>
-              <div className="info">{flight['airportToID.city_en']}</div>
-              <div className="info">{statusConvert(flight.status, moment(flight.timeTakeofFact).format('HH:mm'))}</div>
-              <div className='flights__logo_avia'>
-                <img src={`${flight.airline.en.logoSmallName}`} alt="" />
+              <div className="flights__list-infocolumn">{flight.term}</div>
+              <div className="flights__list-infocolumn">{`${moment(`${flight.timeDepShedule}`).format('HH:mm')}`}</div>
+              <div className="flights__list-infocolumn">{flight['airportToID.city_en']}</div>
+              <div className="flights__list-infocolumn">{statusConvert(flight.status, moment(flight.timeTakeofFact).format('HH:mm'))}</div>
+
+
+              <div className="flights__list-infocolumn">
+                <div className='flights__logo_avia'>
+                  <img src={`${flight.airline.en.logoSmallName}`} alt="" />
+                </div>
+                {flight.airline.en.name}
               </div>
-              <div className="info">{flight.airline.en.name}</div>
-              <div className="info">{flight.codeShareData[0].codeShare}</div>
+
+              <div className="flights__list-infocolumn">{flight.codeShareData[0].codeShare}</div>
             </div>
           ))}
         </div>
