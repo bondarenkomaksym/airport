@@ -33,7 +33,9 @@ const Departures = ({ flightsListDep, getFlightsList }) => {
           {flightsListDep.map(flight => (
 
             <div key={flight.ID} className="flights__list-commoninfo">
-              <div className="flights__list-infocolumn">{flight.term}</div>
+              <div className="flights__list-infocolumn-terminal">
+                <div className="letter">{flight.term}</div>
+              </div>
               <div className="flights__list-infocolumn">{`${moment(`${flight.timeDepShedule}`).format('HH:mm')}`}</div>
               <div className="flights__list-infocolumn">{flight['airportToID.city_en']}</div>
               <div className="flights__list-infocolumn">{statusConvert(flight.status, moment(flight.timeTakeofFact).format('HH:mm'))}</div>

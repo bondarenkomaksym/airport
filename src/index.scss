@@ -29,13 +29,22 @@ body {
 
   &__list{
     width: 80%;
+    min-width: 900px;
+    background-color: #fff;
     margin: 0 auto;
     flex-direction: column;
+  }
+
+  &__list-infocolumn-terminal{
+
+    width: 16.66%;
+
   }
 
   &__headers{
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
   }
 
   &__headers-info{
@@ -65,3 +74,15 @@ body {
   }
 
 
+ .letter{
+    color: #63c745;
+    font-weight: 700;
+    border: 1px solid #63c745;
+    border-radius: 50%;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 22px;
+    }
