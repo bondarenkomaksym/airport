@@ -10,13 +10,13 @@ import Arrivals from './flights/components/Arrivals';
 import SearchFlightInput from './flights/components/SearchFlightInput';
 import Navigation from './flights/components/Navigation';
 
-
+// import "./index.scss";
 
 function App() {
 
   return (
-    <div className="flights__content">
-      <h1>Flights</h1>
+    <div className="flights__app">
+      <div className="flights__header_title">SEARCH FLIGHT</div>
       <Provider store={store}>
         <BrowserRouter>
           <SearchFlightInput />

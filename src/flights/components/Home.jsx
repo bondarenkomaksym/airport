@@ -4,7 +4,7 @@ function Home() {
 
   return (
     <div className="flights__content">
-      <h1>Please enter flight name</h1>
+      <h1>Please enter flight number</h1>
     </div>
   )
 };

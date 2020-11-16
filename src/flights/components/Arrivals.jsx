@@ -16,7 +16,7 @@ const Arrivals = ({ flightsListAr, getFlightsList }) => {
 
   return (
     <div className="flights__content">
-      <h1>Arrivals</h1>
+      {/* <h1>Arrivals</h1> */}
       {flightsListAr.length === 0
         ? <span>No flights</span>
         : <ul className="flights-list">
