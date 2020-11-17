@@ -67,10 +67,15 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      
     }
 
     &__list-commoninfo:nth-of-type(even){
       background-color: rgba(0,102,135,.1);
+    }
+
+    &__list-commoninfo:hover{
+      box-shadow: 0px 9px 9px 0px #d6d6d6;
     }
 
     &__list-infocolumn{
