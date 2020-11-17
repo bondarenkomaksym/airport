@@ -4,6 +4,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #e7efec;
 }
 
   .app {
@@ -34,7 +35,7 @@ body {
       min-width: 900px;
       background-color: #fff;
       margin: 0 auto;
-      padding-left: 40px;
+      // padding-left: 40px;
       flex-direction: column;
     }
 
@@ -48,6 +49,11 @@ body {
       display: flex;
       flex-direction: row;
       line-height: 48px;
+      
+    }
+
+    &__headers-info-terminal{
+      margin-left: 40px;
     }
 
     &__headers-info{
@@ -61,6 +67,10 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+    }
+
+    &__list-commoninfo:nth-of-type(even){
+      background-color: rgba(0,102,135,.1);
     }
 
     &__list-infocolumn{
@@ -92,6 +102,7 @@ body {
     line-height: 40px;
     font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
+    margin-left: 40px;
     }
 
 

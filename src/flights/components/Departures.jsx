@@ -21,7 +21,9 @@ const Departures = ({ flightsListDep, getFlightsList }) => {
         ? <span>No flights</span>
         : <div className="flights__list">
           <div className="flights__headers">
-            <div className="flights__headers-info">Terminal</div>
+            <div className="flights__headers-info">
+              <div className="flights__headers-info-terminal">Terminal</div>
+            </div>
             <div className="flights__headers-info">Local time</div>
             <div className="flights__headers-info">Destination</div>
             <div className="flights__headers-info">Status</div>
