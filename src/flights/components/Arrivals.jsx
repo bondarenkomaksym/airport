@@ -15,34 +15,42 @@ const Arrivals = ({ flightsListAr, getFlightsList }) => {
 
 
   return (
-    <div className="flights__content">
+    <div className="flights">
       {flightsListAr.length === 0
-        ? <span>No flights</span>
-        : <ul className="flights-list">
-          <div className="headers">
-            <div className="headers_info">Terminal</div>
-            <div className="headers_info">Local time</div>
-            <div className="headers_info">Destination</div>
-            <div className="headers_info">Status</div>
-            <div className="headers_info">Airline</div>
-            <div className="headers_info">Flight</div>
+        ? <div className="flights__no-flights">No flights</div>
+        : <div className="flights__list">
+          <div className="flights__headers">
+            <div className="flights__headers-info">
+              <div className="flights__headers-info-terminal">Terminal</div>
+            </div>
+            <div className="flights__headers-info">Local time</div>
+            <div className="flights__headers-info">Destination</div>
+            <div className="flights__headers-info">Status</div>
+            <div className="flights__headers-info">Airline</div>
+            <div className="flights__headers-info">Flight</div>
           </div>
+
           {flightsListAr.map(flight => (
 
-
-            <div key={flight.ID} className="flight-list__commoninfo">
-              <div className="info">{flight.term}</div>
-              <div className="info">{`${moment(`${flight.timeToStand}`).format('HH:mm')}`}</div>
-              <div className="info">{flight['airportFromID.city_en']}</div>
-              <div className="info">{statusConvert(flight.status, moment(flight.timeLandFact).format('HH:mm'))}</div>
-              <div className='logo_avia'>
-                <img src={`${flight.airline.en.logoSmallName}`} alt="" />
+            <div key={flight.ID} className="flights__list-commoninfo">
+              <div className="flights__list-infocolumn-terminal">
+                <div className="letter">{flight.term}</div>
               </div>
-              <div className="info">{flight.airline.en.name}</div>
-              <div className="info">{flight.codeShareData[0].codeShare}</div>
+              <div className="flights__list-infocolumn">{`${moment(`${flight.timeToStand}`).format('HH:mm')}`}</div>
+              <div className="flights__list-infocolumn">{flight['airportFromID.city_en']}</div>
+              <div className="flights__list-infocolumn">{statusConvert(flight.status, moment(flight.timeLandFact).format('HH:mm'))}</div>
+
+              <div className="flights__list-infocolumn">
+                <div className='flights__logo_avia'>
+                  <img src={`${flight.airline.en.logoSmallName}`} alt="" />
+                </div>
+                {flight.airline.en.name}
+              </div>
+
+              <div className="flights__list-infocolumn">{flight.codeShareData[0].codeShare}</div>
             </div>
           ))}
-        </ul>
+        </div>
       }
     </div>
   )
@@ -57,6 +65,5 @@ const mapState = state => {
 const mapDispatch = {
   getFlightsList: flightsActions.getFlightsList,
 }
-
 
 export default connect(mapState, mapDispatch)(Arrivals);
