@@ -9,8 +9,8 @@ function Navigation() {
   const { search, pathname } = useLocation();
   const direction = pathname.split('/')[1];
 
-  const arrivalBtnClass = classNames('navigation__btn', 'btn_arrivals', { 'selected': direction === 'arrivals' })
-  const departuresBtnClass = classNames('navigation__btn', 'btn_departures', { 'selected': direction === 'departures' })
+  const arrivalBtnClass = classNames('navigation__btn', { 'selected': direction === 'arrivals' })
+  const departuresBtnClass = classNames('navigation__btn', { 'selected': direction === 'departures' })
 
   return (
     <div className="flights__navigation navigation" >
