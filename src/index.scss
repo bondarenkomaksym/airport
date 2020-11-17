@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -16,8 +18,11 @@ body {
     background-color: #e7efec;
 
     &__header_title{
+      margin: 40px 0 40px 0;
       color: rgb(68, 132, 206);
       font-size: 50px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
     }
   }
 
@@ -27,8 +32,8 @@ body {
       align-items: center;
       justify-content: center;
       color: rgb(75, 75, 75);
-      font-size: 16px;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 18px;
+      font-family: 'Open Sans', sans-serif;
 
       &__no-flights{
         width: 1120px;
@@ -47,7 +52,6 @@ body {
       min-width: 900px;
       background-color: #fff;
       margin: 0 auto;
-      // padding-left: 40px;
       flex-direction: column;
     }
 
@@ -130,13 +134,15 @@ body {
   margin-bottom: 40px;
 
     &__input{
-    border: none;
+      border: none;
       width: 740px;
       height: 78px;
       padding-left: 70px;
       padding-right: 220px;
       border-radius: 0 90px 0 0;
       font-size: 24px;
+      outline: none;
+      color:#95989a;
   }
 
   &__svg-search{
@@ -149,7 +155,7 @@ body {
   }
 
     &__button{
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Open Sans', sans-serif;
       text-transform: uppercase;
       display: inline-block;
       z-index: 999;
@@ -167,6 +173,7 @@ body {
       border-radius: 0 80px 0 0;
       text-align: left;
       padding: 0 20px;
+      outline: none;
       cursor: pointer;
     }
     &__button:hover {

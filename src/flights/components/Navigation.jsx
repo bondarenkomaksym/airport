@@ -1,17 +1,24 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import classNames from 'classnames';
+import { NavLink, useLocation } from "react-router-dom";
 
 import '../styles/nav.scss';
 
 function Navigation() {
 
+  const { search, pathname } = useLocation();
+  const direction = pathname.split('/')[1];
+
+  const arrivalBtnClass = classNames('navigation__btn', 'btn_arrivals', { 'selected': direction === 'arrivals' })
+  const departuresBtnClass = classNames('navigation__btn', 'btn_departures', { 'selected': direction === 'departures' })
+
   return (
-    <div className="navigation" >
-      <NavLink className="navigation__dep" to="/departures">
+    <div className="flights__navigation navigation" >
+      <NavLink className={departuresBtnClass} to={`/departures${search}`}>
         <div>Departures</div>
       </NavLink>
 
-      <NavLink className="navigation__ar" to="/arrivals">
+      <NavLink className={arrivalBtnClass} to={`/arrivals${search}`}>
         <div>Arrivals</div>
       </NavLink>
     </div>

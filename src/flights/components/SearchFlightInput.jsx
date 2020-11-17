@@ -34,7 +34,7 @@ const SearchFlightInput = ({ filterFlight }) => {
         <input
           className="filter__input"
           type="text"
-          placeholder="Flight #"
+          placeholder="Enter flight #"
           value={filteredTextFlight}
           onChange={e => setName(e.target.value)}
         />
