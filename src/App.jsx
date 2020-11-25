@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import Home from './flights/components/Home';
+import StartPage from './flights/components/StartPage';
 import Departures from './flights/components/Departures';
 import Arrivals from './flights/components/Arrivals';
 import SearchFlightInput from './flights/components/SearchFlightInput';
@@ -22,7 +22,7 @@ function App() {
           <SearchFlightInput />
           <Navigation />
           <Switch>
-            <Route exact path='/'><Home /></Route>
+            <Route exact path='/'><StartPage /></Route>
             <Route path='/departures'><Departures /></Route>
             <Route path='/arrivals'><Arrivals /></Route>
             <Route path='/*' component={() => <h1>Error 404</h1>} />
