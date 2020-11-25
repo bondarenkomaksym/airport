@@ -6,6 +6,10 @@ import '../styles/nav.scss';
 
 function Navigation() {
 
+  // useEffect(() => {
+  //   getFlightsList();
+  // }, []);
+
   const { search, pathname } = useLocation();
   const direction = pathname.split('/')[1];
 
